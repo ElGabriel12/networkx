@@ -70,7 +70,7 @@ def generic_bfs_edges(G, source, neighbors=None, depth_limit=None):
             if child not in visited:
                 yield parent, child
                 visited.add(child)
-                print(child)
+                print(child) 
                 if depth_now > 1:
                     queue.append((child, depth_now - 1, neighbors(child)))
         except StopIteration:
