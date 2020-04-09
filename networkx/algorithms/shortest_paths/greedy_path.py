@@ -7,7 +7,7 @@ import networkx as nx
 from networkx.utils import not_implemented_for
 from networkx.algorithms.shortest_paths.weighted import _weight_function
 
-__all__ = ['greedy_path', 'greedy_path_lenght' ]
+__all__ = ['greedy_path']
 
 
 def greedy_path(G, source, target, heuristic=None, weight='weight'):
@@ -113,7 +113,7 @@ def greedy_path(G, source, target, heuristic=None, weight='weight'):
         explored[curnode] = parent
 
         for neighbor, w in G[curnode].items():
-            ncost = dist # + weight(curnode, neighbor, w)
+            ncost = dist
             if neighbor in enqueued:
                 qcost, h = enqueued[neighbor]
                 # if qcost <= ncost, a less costly path from the
